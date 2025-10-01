@@ -33,7 +33,7 @@ $people = [
     ['name' => 'Tina', 'age' => 18],
 ];   
 
-// Parte 1: Contar adultos e crianças
+// Parte 1: Contar adultos e crianças II
 $adultos = 0;
 $crianças = 0;
 
