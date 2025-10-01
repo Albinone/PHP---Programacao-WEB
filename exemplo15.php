@@ -46,8 +46,16 @@ echo $content;
 fclose($file);
 
 
+//example 3 - criar ficheiro2 txt
+// 1. create file
+$file =fopen(filename: './ficheiro2.txt' , mode: 'x');
 
 
+//2. write file
+fwrite($file, data:"linha 1");
+
+//3. close file
+fclose($file);
 
 
 
