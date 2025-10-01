@@ -48,17 +48,25 @@ fclose($file);
 
 //example 3 - criar ficheiro2 txt
 // 1. create file
-$file =fopen(filename: './ficheiro2.txt' , mode: 'x');
+//$file =fopen(filename: './ficheiro2.txt' , mode: 'x');
+
+//2. write file
+//fwrite($file, data:"linha 1");
+
+//3. close file
+//fclose($file);
+
+//example 4 - adicionar conteudo ao ficheiro2 txt
+
+// 1. oopen file
+$file =fopen(filename: './ficheiro2.txt' , mode: 'a');
 
 
 //2. write file
-fwrite($file, data:"linha 1");
+fwrite($file, data:"linha 2\n");
 
 //3. close file
 fclose($file);
-
-
-
 
 
 ?>
