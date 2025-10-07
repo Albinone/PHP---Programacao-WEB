@@ -26,6 +26,4 @@ foreach($accounts as $account){
     echo $name . " : " . $url . "<br>". "id " . $id;
 }                                   
 
-
-
 ?>
