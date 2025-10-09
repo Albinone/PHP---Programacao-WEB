@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+  <head>
+    
+    <title>My Website</title>
+    
+  </head>
+  <body>
+  
+    <h1 id="title">My Node.js Website</h1>
+  
+    <p id="explanation">This is a basic website using Node.js and the build in http and fs modules.</p>
+
+    <button onclick="printTitleConsole ()">Access content</button>
+    
+    <button onclick="createParagraph()">Modify content</button>
+
+    <script>
+
+      function printTitleConsole () {
+        var name = document.getElementById('title');
+        console.log(name) ; 
+      }
+
+      function createParagraph() {
+        var p = document.createElement("p");
+        p.innerHTML = "Add a new paragraph.";
+        document.getElementById("explanation").append(p);
+      }
+
+      window.addEventListener('load', function() {
+        alert('Page is loaded');
+      });
+
+
+
+    </script>
+    
+
+  </body>
+</html>
