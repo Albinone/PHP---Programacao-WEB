@@ -14,14 +14,29 @@ window.addEventListener("load", function () {
             const title = document.getElementById("planetTitle");
             title.innerHTML = jsonData[0].name;
 
+            const image = document.getElementById("planetImage");
+            image.src = jsonData[0].image;
+
+            let index = 1;
+
             title.addEventListener("click", function () {
-                const image = document.getElementById("planetImage");
-                image.src = jsonData[0].image;
-             
-            
+
+                title.innerHTML = jsonData[index].name;
+                image.src = jsonData[index].image;
+
+                index++;
+
+                if (index >= jsonData.length) {
+                    index = 0;
+                }
             })
 
-        }
-        )
-    })
+            //title.addEventListener("click", function () {
+
+
+
+        })
+
+    }
+    )
 })
