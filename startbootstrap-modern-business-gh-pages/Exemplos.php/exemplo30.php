@@ -18,6 +18,9 @@ Class Loja{
         self::$taxaIVA = $novoIVA;
     }
 
+      public static function atualizaIVA1($novoIVA1){
+        self::$taxaIVA = $novoIVA1;
+    }
 }
 
 //criação das lojas
@@ -28,8 +31,8 @@ $loja2 = new Loja("BenaventeCityInfor");
 $loja2->mostraInfo();
 
 //atualizar o IVA para 21%
-//$loja1::atualizaIVA(21);
-loja::atualizaIVA(21);
+$loja1::atualizaIVA(21);
+$loja2::atualizaIVA1(23);
 
 //mostrar após atualização
 echo "<hr>";
