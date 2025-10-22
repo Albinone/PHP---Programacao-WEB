@@ -11,7 +11,7 @@ example - 2 colunas
  */
 
 //Connect to database
-$pdo = new PDO('mysql:host=localhost;dbname=dbtest', username:'root', password:'');
+$pdo = new PDO('mysql:host=localhost:3307;dbname=dbtest', username:'root', password:'');
 
 //insert
     //exec() executa SQL diretamente, sem proteção contra SQL Injection.
@@ -23,54 +23,54 @@ $pdo = new PDO('mysql:host=localhost;dbname=dbtest', username:'root', password:'
 //echo "Registos inseridos: " . $count . "and the last inserted id is " .$lastId . "<br>";
 
 //* 2º exemplo - prepared statements
-$pdo->beginTransaction();
+/* $pdo->beginTransaction();
 $pdo->exec(statement: "INSERT INTO example (name) VALUES ('maria')");
 $pdo->exec(statement: "INSERT INTO example (name) VALUES ('gomes')");
 $pdo->exec(statement: "INSERT INTO example (name) VALUES ('dias')");
 $pdo->exec(statement: "INSERT INTO example (name) VALUES ('junior')");
-$pdo->commit();
+$pdo->commit();*/
 
 //3º exemplo
-$name = "Ana Silva";
-$stm = $pdo->prepare(query: 'INSERT INTO example (name) VALUES (?)');
-$stm->bindValue(1, $name);
-$stm->execute();
+// $name = "Ana Silva";
+// $stm = $pdo->prepare(query: 'INSERT INTO example (name) VALUES (?)');
+// $stm->bindValue(1, $name);
+// $stm->execute();
 
 
 //update 
-$name = "Carlos M";
-$id = 1;
-$stm = $pdo->prepare(query: 'UPDATE example SET name=? where id=?');
-$stm->bindValue(1,$name);
-$stm->bindValue(2,$id);
-$stm->execute();
+// $name = "Carlos M";
+// $id = 1;
+// $stm = $pdo->prepare(query: 'UPDATE example SET name=? where id=?');
+// $stm->bindValue(1,$name);
+// $stm->bindValue(2,$id);
+// $stm->execute();
 
-//delete
-$id =2;
-$stm = $pdo->prepare(query:'DELETE FROM example where id=?');
-$stm->bindValue(1,$id);
-$stm->execute();
+// //delete
+// $id =2;
+// $stm = $pdo->prepare(query:'DELETE FROM example where id=?');
+// $stm->bindValue(1,$id);
+// $stm->execute();
 
-echo "<hr>";
-//select
-$statement = $pdo->prepare('SELECT * FROM example'); // prepare the SQL query
-$statement->execute(); // run the query
+// echo "<hr>";
+// //select
+// $statement = $pdo->prepare('SELECT * FROM example'); // prepare the SQL query
+// $statement->execute(); // run the query
 
-$rows = $statement->fetchAll(PDO::FETCH_ASSOC); // fetch all rows as associative arrays
+// $rows = $statement->fetchAll(PDO::FETCH_ASSOC); // fetch all rows as associative arrays
 
-foreach ($rows as $row) {
-    echo htmlspecialchars($row['id'] ." - ".$row['name']) . "<br>";
-}
+// foreach ($rows as $row) {
+//     echo htmlspecialchars($row['id'] ." - ".$row['name']) . "<br>";
+// }
 
-echo "<hr>";
-$name = "João";
-$stm = $pdo->prepare(query:'SELECT * FROM example where name=?');
-$stm->bindValue(1,$name);
-$stm->execute();
-$rows = $stm->fetchAll(PDO::FETCH_ASSOC); // fetch all rows as associative arrays
+// echo "<hr>";
+// $name = "João";
+// $stm = $pdo->prepare(query:'SELECT * FROM example where name=?');
+// $stm->bindValue(1,$name);
+// $stm->execute();
+// $rows = $stm->fetchAll(PDO::FETCH_ASSOC); // fetch all rows as associative arrays
 
-foreach ($rows as $row) {
-    echo htmlspecialchars($row['id'] ." - ".$row['name']) . "<br>";
-}
-
+// foreach ($rows as $row) {
+//     echo htmlspecialchars($row['id'] ." - ".$row['name']) . "<br>";
+// }
+ 
 ?>
