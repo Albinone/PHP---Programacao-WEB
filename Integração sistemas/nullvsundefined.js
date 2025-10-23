@@ -24,3 +24,6 @@ var initialized;
 
 console.log(varNull==initialized);  // null
 console.log(varNull===initialized); // false
+
+console.log(typeof null);      // object
+console.log(typeof undefined); // undefined
